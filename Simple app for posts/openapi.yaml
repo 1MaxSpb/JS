@@ -1,0 +1,186 @@
+openapi: 3.0.0
+info:
+  title: Простое API для постов
+  description: Простое API для управления постами, основанное на jsonplaceholder.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+
+components:
+  schemas:
+    Post:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Уникальный идентификатор поста.
+          example: 1
+        userId:
+          type: integer
+          description: ID пользователя, создавшего пост.
+          example: 1
+        title:
+          type: string
+          description: Заголовок поста.
+          example: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
+        body:
+          type: string
+          description: Содержимое поста.
+          example: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    NewPost:
+      type: object
+      required:
+        - userId
+        - title
+        - body
+      properties:
+        userId:
+          type: integer
+          description: ID пользователя, который создает пост.
+          example: 1
+        title:
+          type: string
+          description: Заголовок нового поста.
+          example: "Новый заголовок"
+        body:
+          type: string
+          description: Содержимое нового поста.
+          example: "Это содержимое нового поста."
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Сообщение с описанием ошибки.
+          example: "Пост не найден"
+
+paths:
+  /posts:
+    get:
+      summary: Получить все посты
+      tags:
+        - Посты
+      responses:
+        '200':
+          description: Список постов.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'
+    post:
+      summary: Создать новый пост
+      tags:
+        - Посты
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewPost'
+      responses:
+        '201':
+          description: Пост успешно создан.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+        '400':
+          description: Неверные входные данные, невалидный объект.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /posts/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: ID поста для выполнения операции.
+        schema:
+          type: integer
+    get:
+      summary: Получить пост по ID
+      tags:
+        - Посты
+      responses:
+        '200':
+          description: Запрошенный пост.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+        '404':
+          description: Пост не найден.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      summary: Обновить пост по ID
+      tags:
+        - Посты
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewPost'
+      responses:
+        '200':
+          description: Пост успешно обновлен.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+        '404':
+          description: Пост не найден.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Удалить пост по ID
+      tags:
+        - Посты
+      responses:
+        '200':
+          description: Пост успешно удален.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Post deleted successfully"
+        '404':
+          description: Пост не найден.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /users/{userId}/posts:
+    parameters:
+      - name: userId
+        in: path
+        required: true
+        description: ID пользователя, чьи посты нужно получить.
+        schema:
+          type: integer
+    get:
+      summary: Получить все посты конкретного пользователя
+      tags:
+        - Пользователи
+      responses:
+        '200':
+          description: Список постов для указанного пользователя.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'

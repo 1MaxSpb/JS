@@ -1,0 +1,17 @@
+{
+  "name": "node-posts-api",
+  "version": "1.0.0",
+  "description": "Simple posts API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}

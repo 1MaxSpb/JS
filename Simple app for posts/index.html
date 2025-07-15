@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Посты</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Посты</h1>
+    <div class="actions">
+      <button onclick="fetchAllPosts()">Показать все посты</button>
+      <button onclick="showUserSearchForm()">Показать посты пользователя</button>
+      <button onclick="showPostIdSearchForm()">Показать пост по ID</button>
+      <button onclick="showCreateForm()">Создать пост</button>
+    </div>
+    <div id="userSearchForm" style="display:none; margin-bottom:24px;">
+      <h3>Найти посты пользователя</h3>
+      <input type="number" id="userIdInput" placeholder="ID пользователя" min="1" style="width: 30%">
+      <button onclick="fetchUserPosts()">Показать посты пользователя</button>
+      <button onclick="hideUserSearchForm()">Отмена</button>
+    </div>
+    <div id="findByIdForm" style="display:none; margin-bottom:24px;">
+      <h3>Найти пост по ID</h3>
+      <input type="number" id="postIdInput" placeholder="ID поста" min="1" style="width: 30%">
+      <button onclick="fetchPostById()">Показать пост по ID</button>
+      <button onclick="hidePostIdSearchForm()">Отмена</button>
+    </div>
+    <div id="createForm" style="display:none; margin-bottom:24px;">
+      <h3>Создать пост</h3>
+      <input type="number" id="newUserId" placeholder="ID пользователя" min="1" style="width: 30%"><br><br>
+      <input type="text" id="newTitle" placeholder="Заголовок" style="width: 60%"><br><br>
+      <textarea id="newBody" placeholder="Текст поста" rows="4" style="width: 80%"></textarea><br><br>
+      <button onclick="createPost()">Сохранить</button>
+      <button onclick="hideCreateForm()">Отмена</button>
+    </div>
+    <h2>Список постов</h2>
+    <div id="posts" class="post-list"></div>
+    <div id="message"></div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html> 
