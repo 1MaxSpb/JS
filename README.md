@@ -1,2 +1,2 @@
-# JS
-Developer's Full Stack Portfolio
+# Developer's Full Stack Portfolio
+
