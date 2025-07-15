@@ -1,4 +1,4 @@
-A simple application for posts
+# A simple application for posts
 
 A web client and a server for managing posts (analogous to jsonplaceholder). You can view, search, and create posts through a user-friendly interface.
 
