@@ -1,79 +1,115 @@
-# 📋 Простое приложение для постов
+A simple application for posts
 
-Веб-клиент и сервер для управления постами (аналог jsonplaceholder). Можно просматривать, искать и создавать посты через удобный интерфейс.
+A web client and a server for managing posts (analogous to jsonplaceholder). You can view, search, and create posts through a user-friendly interface.
 
-## 🖼️ Мокап интерфейса
+## 🖼️ Interface mockup
 
-![Мокап фронтенда](image.png "Изображение с примером")
-
----
-
-## 🚀 Быстрый старт
-
-1. **Клонируйте репозиторий и перейдите в папку проекта:**
-   ```bash
-   git clone https://github.com/1MaxSpb/JS.git
-   cd env-task-3
-   ```
-2. **Установите зависимости:**
-   ```bash
-   npm install
-   ```
-3. **Запустите сервер:**
-   ```bash
-   npm start
-   ```
-4. **Откройте в браузере:**
-   [http://localhost:3000/](http://localhost:3000/)
+![Front-end mockup](image.png "Sample image")
 
 ---
 
-## 📁 Структура проекта
+## 🚀 Quick Start
 
-- `index.js` — основной сервер Express
-- `index.html` — главная страница (фронтенд)
-- `main.js` — логика работы с API и DOM
-- `styles.css` — стилизация интерфейса
-- `postsController.js` — обработчики API для постов
-- `data/posts.json` — данные постов (создаётся автоматически)
-- `openapi.yaml` — описание API (OpenAPI 3.0)
+1. **Clone the repository and navigate to the project folder:**
+
+```bash
+
+git clone https://github.com/1MaxSpb/JS.git
+
+cd env-task-3
+
+```
+
+2. **Install the dependencies:**
+
+```bash
+
+npm install
+
+```
+
+3. **Start the server:**
+
+```bash
+
+npm start
+
+```
+
+4. **Open it in a browser:**
+
+[http://localhost:3000/](http://localhost:3000/)
 
 ---
 
-## 🛠️ Примеры API
+## 📁 Project structure
 
-- `GET /posts` — получить все посты
-- `GET /posts/:id` — получить пост по ID
-- `GET /users/:userId/posts` — посты пользователя
-- `POST /posts` — создать пост (тело: `{ userId, title, body }`)
-- `PUT /posts/:id` — обновить пост
-- `DELETE /posts/:id` — удалить пост
+- `index.js` — the main Express server
 
-**Пример тела для создания поста:**
+- `index.html ` — home page (frontend)
+
+- `main.js` — logic of working with API and DOM
+
+-`styles.css` — interface styling
+
+- `postsController.js` — API handlers for posts
+
+-`data/posts.json` — posts data (created automatically)
+
+-`openapi.yaml` — API description (OpenAPI 3.0)
+
+---
+
+## 🛠️ API Examples
+
+-`GET /posts` — get all posts
+
+-`GET /posts/:id` — get a post by ID
+
+- `GET /users/:userId/posts` — user posts
+
+-`POST/posts` — create a post (body: `{userId, title, body }`)
+
+-`PUT /posts/:id` — update the post
+
+-`DELETE /posts/:id` — delete a post
+
+**An example of a body for creating a post:**
+
 ```json
+
 {
-  "userId": 1,
-  "title": "Заголовок",
-  "body": "Текст поста"
+
+"userId": 1,
+
+"title": "Title",
+
+"body": "Post text"
+
 }
+
 ```
 
 ---
 
-## 📝 Инициализация данных
+## 📝 Data initialization
 
-- При первом запуске файл `data/posts.json` создаётся автоматически.
-- Можно добавить свои посты вручную или через интерфейс.
+- At the first launch, the `data/posts.json` file is created automatically.
+
+- You can add your posts manually or through the interface.
 
 ---
 
-## 📦 Требования
+## 📦 Requirements
+
 - Node.js >= 16
+
 - npm
 
 ---
 
-## 🤝 Авторы и лицензия
+## 🤝 Authors and license
 
-- Проект для учебных целей
-- Лицензия: ISC
+- A project for educational purposes
+
+- License: ISC
