@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Резюме — Гущин Максим</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="resume-header">
+        <div class="header-content">
+            <figure class="photo">
+                <img src="photo.jpg" alt="Фото: Гущин Максим">
+            </figure>
+            <div class="main-info">
+                <h1>Гущин Максим</h1>
+                <p class="city">Санкт-Петербург</p>
+                <p class="birth">Дата рождения: 31.05.2010</p>
+                <p class="work-format">Формат работы: удалённо, офис</p>
+            </div>
+            <button class="theme-toggle" aria-label="Переключить тему">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+        <nav class="contacts">
+            <a href="mailto:work@maxim-it-ya.ru"><i class="fas fa-envelope"></i> work@maxim-it-ya.ru</a>
+            <a href="tel:+79650400542"><i class="fas fa-phone"></i> +7 (965) 040-05-42</a>
+            <a href="https://t.me/max_gus_it"><i class="fab fa-telegram"></i> Telegram</a>
+            <a href="https://github.com/1Maxspb"><i class="fab fa-github"></i> GitHub</a>
+        </nav>
+    </header>
+    <main class="resume-main">
+        <section class="about">
+            <h2>О себе</h2>
+            <p>Ответственный и инициативный веб-разработчик с опытом в аналитике данных. Люблю создавать удобные интерфейсы и автоматизировать рутину.</p>
+        </section>
+        <section class="experience">
+            <h2>Опыт работы</h2>
+            <article>
+                <h3>Веб-разработчик, ООО «Пример»</h3>
+                <p class="period">2021 — н.в.</p>
+                <ul>
+                    <li>Разработка и поддержка корпоративных сайтов</li>
+                    <li>Интеграция с внешними сервисами</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Аналитик данных, ИП «Пример»</h3>
+                <p class="period">2018 — 2021</p>
+                <ul>
+                    <li>Анализ бизнес-процессов</li>
+                    <li>Визуализация данных</li>
+                </ul>
+            </article>
+        </section>
+        <section class="education">
+            <h2>Образование</h2>
+            <article>
+                <h3>ИТМО, Прикладная математика и информатика</h3>
+                <p class="period">2013 — 2017</p>
+            </article>
+        </section>
+        <section class="languages">
+            <h2>Языки</h2>
+            <ul>
+                <li>Русский — родной</li>
+                <li>Английский — B2</li>
+            </ul>
+        </section>
+        <section class="portfolio">
+            <h2>Портфолио</h2>
+            <ul>
+                <li><a href="https://github.com/1Maxspb">GitHub проекты</a></li>
+                <li><a href="#">Личный сайт</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer class="resume-footer">
+        <p>© 2025 Гущин Максим <br> Шрифты © 1995–2025 Студия Артемия Лебедева (Распространяется по студенческой лицензии)</p>
+    </footer>
+    <script>
+        // Переключатель темы
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html>
