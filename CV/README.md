@@ -12,8 +12,7 @@
 
 ## Особенности
 
-- Красивое оформление карточки с фото, описанием и контактами  
-- Смена фонового паттерна при наведении и клике  
+- Красивое оформление карточки с фото, описанием и контактами   
 - Переключение светлой/тёмной темы  
 
 ## Запуск
@@ -42,7 +41,6 @@ Includes information about skills, experience, education, and contact details.
 ## Features
 
 - Beautiful card design with photo, description, and contacts  
-- Background pattern changes on hover and click  
 - Light/dark theme toggle  
 
 ## Usage
