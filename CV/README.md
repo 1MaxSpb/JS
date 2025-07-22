@@ -20,8 +20,6 @@
 Откройте `index.html` в браузере.
 
 ## Копирайт
-
-© 2025 Гущин Максим  
 Шрифты © 1995–2025 Студия Артемия Лебедева (Распространяется по студенческой лицензии)
 
 ---
@@ -48,6 +46,4 @@ Includes information about skills, experience, education, and contact details.
 Open `index.html` in your browser.
 
 ## Copyright
-
-© 2025 Maxim Gushchin  
 Fonts © 1995–2025 Art. Lebedev Studio (Distributed under student license)
